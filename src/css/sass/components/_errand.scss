@@ -1,0 +1,80 @@
+.errand {
+  &__container {
+    svg {
+      fill:black;
+      width: 2.5rem;
+      height: 2.5rem;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__editing {
+    position: relative;
+    background-color: white;
+    min-height: 16rem;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+  
+    & input {
+
+      padding: 3rem;
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: lightgray;
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__editing-btns {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__notediting {
+    position: relative;
+    min-height: 16rem;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+  }
+
+  &__notediting-content {
+    cursor: pointer;
+    padding: 3rem;
+  }
+
+  &__notediting-btns {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__num {
+    position: absolute;
+    padding-left: 0.7rem;
+    font-size: 1.8rem;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 5rem;
+    background-color:coral;
+    clip-path: polygon(100% 0%, 0 0, 0 100%);
+  }
+
+  &__completed {
+    &--text {
+      color: lightgray;
+      text-decoration: line-through;
+    }
+
+    &--num {
+      background-color:steelblue;
+    }
+  }
+}
+

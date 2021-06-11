@@ -17,4 +17,126 @@ body {
 
 .app__container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 20rem; }
+
+.app__header {
+  color: white;
+  font-size: 6rem;
+  margin: 3rem 0;
+  align-self: center; }
+
+.errand__container svg {
+  fill: black;
+  width: 2.5rem;
+  height: 2.5rem; }
+  .errand__container svg:hover {
+    cursor: pointer; }
+
+.errand__editing {
+  position: relative;
+  background-color: white;
+  min-height: 16rem;
+  display: grid;
+  grid-template-rows: 1fr max-content; }
+  .errand__editing input {
+    padding: 3rem;
+    border: none;
+    outline: none; }
+    .errand__editing input::placeholder {
+      color: lightgray;
+      font-size: 2.2rem; }
+
+.errand__editing-btns {
+  display: flex;
+  justify-content: flex-end; }
+
+.errand__notediting {
+  position: relative;
+  min-height: 16rem;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr max-content; }
+
+.errand__notediting-content {
+  cursor: pointer;
+  padding: 3rem; }
+
+.errand__notediting-btns {
+  display: flex;
+  justify-content: flex-end; }
+
+.errand__num {
+  position: absolute;
+  padding-left: 0.7rem;
+  font-size: 1.8rem;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: coral;
+  clip-path: polygon(100% 0%, 0 0, 0 100%); }
+
+.errand__completed--text {
+  color: lightgray;
+  text-decoration: line-through; }
+
+.errand__completed--num {
+  background-color: steelblue; }
+
+.errandlist__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-gap: 2rem; }
+
+.form__container {
+  display: flex;
+  flex-direction: row;
+  height: 16rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center; }
+
+.form__addbar {
+  display: flex;
+  justify-content: center; }
+  .form__addbar input {
+    width: 30rem; }
+  .form__addbar svg {
+    fill: black;
+    width: 2.5rem;
+    height: 2.5rem; }
+    .form__addbar svg:hover {
+      cursor: pointer; }
+
+.form__filter {
+  display: flex;
+  flex-direction: row; }
+  .form__filter div {
+    padding: 0.5rem 1rem;
+    cursor: pointer; }
+  .form__filter div:not(:last-child) {
+    margin-right: 2rem; }
+
+.form__filter-all {
+  background-color: lightgray;
+  opacity: 0.4; }
+  .form__filter-all--pressed {
+    background-color: lightgray;
+    opacity: 1; }
+
+.form__filter-com {
+  background-color: steelblue;
+  opacity: 0.4; }
+  .form__filter-com--pressed {
+    background-color: steelblue;
+    opacity: 1; }
+
+.form__filter-uncom {
+  background-color: coral;
+  opacity: 0.4; }
+  .form__filter-uncom--pressed {
+    background-color: coral;
+    opacity: 1; }
