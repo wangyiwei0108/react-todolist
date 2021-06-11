@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Form from './Form';
-import CardList from './CardList';
+import ErrandList from './ErrandList';
 
 const App = () => {
 
@@ -9,9 +9,7 @@ const App = () => {
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
-
     setTodos(JSON.parse(localStorage.getItem("todos")))
-
   }, [])
 
   useEffect(() => {
@@ -40,9 +38,9 @@ const App = () => {
 
   return(
     <div className="app__container">
-      <h1 className="app__header">我の待辦事項⋯⋯</h1>
+      <h1 className="app__header">我の待辦事項</h1>
       <Form setTodos={setTodos} todos={todos} setStatus={setStatus}/>
-      <CardList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos}/>
+      <ErrandList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos}/>
     </div>
   )
 }

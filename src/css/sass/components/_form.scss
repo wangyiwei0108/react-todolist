@@ -1,0 +1,74 @@
+.form {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    height: 16rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__addbar {
+    display: flex;
+    justify-content: center;
+
+    & input {
+      width: 30rem;
+    }
+
+    & svg {
+      fill:black;
+      width: 2.5rem;
+      height: 2.5rem;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: row;
+
+    & div {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  
+    & div:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__filter-all {
+    background-color: lightgray;
+    opacity: 0.4;
+
+    &--pressed {
+      background-color: lightgray;
+      opacity: 1;
+    }
+  }
+
+  &__filter-com {
+    background-color: steelblue;
+    opacity: 0.4;
+
+    &--pressed {
+      background-color: steelblue;
+      opacity: 1;
+    }
+  }
+
+  &__filter-uncom {
+    background-color: coral;
+    opacity: 0.4;
+
+    &--pressed {
+      background-color: coral;
+      opacity: 1;
+    }
+  }
+
+}
