@@ -41,7 +41,17 @@
     min-height: 16rem;
     background-color: white;
     display: grid;
-    grid-template-rows: 1fr max-content;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: flex-end;
+
+    & svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
   }
 
   &__notediting-content {

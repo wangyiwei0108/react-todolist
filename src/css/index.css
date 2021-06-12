@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 20rem; }
+  margin: 0 13rem; }
 
 .app__header {
   color: white;
@@ -57,7 +57,14 @@ body {
   min-height: 16rem;
   background-color: white;
   display: grid;
-  grid-template-rows: 1fr max-content; }
+  grid-template-rows: auto 1fr auto; }
+
+.errand__stars {
+  display: flex;
+  justify-content: flex-end; }
+  .errand__stars svg {
+    width: 1.6rem;
+    height: 1.6rem; }
 
 .errand__notediting-content {
   cursor: pointer;
@@ -97,19 +104,27 @@ body {
   height: 16rem;
   width: 100%;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  user-select: none; }
 
 .form__addbar {
   display: flex;
   justify-content: center; }
   .form__addbar input {
-    width: 30rem; }
+    margin: 0 1rem;
+    width: 20%; }
   .form__addbar svg {
-    fill: black;
-    width: 2.5rem;
-    height: 2.5rem; }
-    .form__addbar svg:hover {
-      cursor: pointer; }
+    fill: yellow;
+    margin: 0.4rem 0rem 0.4rem 0.4rem;
+    width: 3rem;
+    height: 3rem; }
+
+.form__submit-btn {
+  margin: 0 1rem;
+  padding: 0.2rem 0.8rem;
+  color: white;
+  background-color: steelblue;
+  cursor: pointer; }
 
 .form__filter {
   display: flex;
