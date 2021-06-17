@@ -6,6 +6,7 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
   const [editing, setEditing] = useState(false);
   const [newText, setNewText] = useState('');
 
+  // 計算已完成 errand 的數量
   useEffect(() => {
     const completedTodos = todos.filter(item => {
       return item.completed === true;
@@ -13,6 +14,7 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
     setCompletedNum(completedTodos.length);
   }, [todos, setCompletedNum])
 
+  // 標註 errand 已完成
   const doneHandler = () => {
     setTodos(todos.map(item => {
       if(item.id === todo.id) {
@@ -24,18 +26,22 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
     }))
   }
 
+  // 刪除：errand
   const removeHandler = () => {
     setTodos(todos.filter(item => item.id !== todo.id))
   }
 
+  // 編輯：errand 狀態
   const editHandler = () => {
     setEditing(!editing);
   }
 
+  // 編輯：errand 內容
   const newInputHandler = (e) => {
     setNewText(e.target.value);
   }
 
+  // 編輯：errand 內容確定發送
   const confirmHandler = (e) => {
     setTodos(
       todos.map((item) => {
@@ -50,10 +56,12 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
     setEditing(false);
   }
 
+  // 編輯：errand 取消編輯
   const cancleHandler = () => {
     setEditing(false);
   }
 
+  // 編輯：星星數量
   const starHandler = (value) => {
     setTodos(
       todos.map((item) => {
@@ -69,11 +77,13 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
 
   return(
     <div className="errand__container">
-      {editing 
-      ?
+      {editing
+      ? // 在編輯中
         <form className="errand__editing" onSubmit={confirmHandler}>
           <p className={todo.completed? "errand__completed--num errand__num" : "errand__num"}>{num + 1}</p>
-          <input onDoubleClick={confirmHandler} type="text" value={newText} placeholder={todo.text} onChange={newInputHandler}></input>
+          <div className="errand__editing-input">
+            <input onDoubleClick={confirmHandler} type="text" value={newText} placeholder={todo.text} onChange={newInputHandler}></input>
+          </div>
           <div className="errand__editing-btns">
             <div onClick={confirmHandler} type="submit">
               <svg><use xlinkHref="images/sprite.svg#icon-check"></use></svg>
@@ -83,8 +93,8 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
             </div>
           </div>
         </form>
-      :
-      <div draggable="true" className="errand__notediting">
+      :  // 沒有在編輯
+      <div className="errand__notediting">
         <div className="errand__stars">
         <Rating
             emptySymbol={<svg><use xlinkHref="images/sprite.svg#icon-star-outlined"></use></svg>}

@@ -1,0 +1,59 @@
+$themes: (
+  default: (
+    primary: $color-primary,
+    secondary: $color-secondary,
+    tertiary: $color-tertiary,
+    bg-gradient-1: $color-gradient-1,
+    bg-gradient-2: $color-gradient-2,
+    bg-front: rgba($color-white, 0.7),
+    header: $color-grey-3,
+    color-switch: $color-grey-1,
+    color-switch-btn: $color-switch-btn,
+    text: $color-grey-3,
+    card: rgba($color-white, 0.8),
+    shadow: rgba($color-black, 0.1),
+    completed: $color-grey-1,
+    placeholder: $color-grey-2,
+    btn: $color-grey-2,
+    btn-text: $color-white,
+    input: rgba($color-white, 0.8)
+
+  ),
+  dark: (
+    primary: $color-primary-dark,
+    secondary: $color-secondary-dark,
+    tertiary: $color-tertiary-dark,
+    bg-gradient-1: $color-gradient-1-dark,
+    bg-gradient-2: $color-gradient-2-dark,
+    bg-front: rgba($color-white, 0.9),
+    header: $color-grey-3-dark,
+    color-switch: $color-grey-1-dark,
+    color-switch-btn: $color-switch-btn,
+    text: $color-grey-3-dark,
+    card: rgba($color-white, 0.9),
+    shadow: rgba($color-black, 0.1),
+    completed: $color-grey-1-dark,
+    placeholder: $color-grey-2-dark,
+    btn: $color-grey-2-dark,
+    btn-text: $color-white,
+    input: rgba($color-white, 0.8)
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

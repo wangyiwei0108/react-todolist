@@ -1,15 +1,114 @@
 .app {
+
+  &__background {
+    width: 100%;
+    overflow-y: auto;
+    min-height: 100vh;
+
+    @include themed() {
+      background-image: linear-gradient(135deg, t('bg-gradient-1') 0%, t('bg-gradient-2') 100%);
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 13rem;
+    position: relative;
+    min-height: 100vh;
+    padding: 5.5rem 10rem;
+    margin: 3.8rem 15rem;
+    border-radius: 10px;
+
+    @include themed() {
+      background-color: t('bg-front');
+      box-shadow: 0 2rem 6rem t('shadow');
+    }
+
+    @include respond(-large) {
+      padding: 5rem 10rem;
+      margin: 3.7rem 12.5rem;
+    }
+
+    @include respond(-medium) {
+      padding: 4rem 8rem;
+      margin: 3.2rem 11rem;
+    }
+
+    @include respond(-small) {
+      padding: 4rem 7rem;
+      margin: 2.8rem 6rem;
+    }
+
+    @include respond(-smallest) {
+      padding: 2rem 3.5rem;
+      margin: 2.5rem 2rem;
+    }
+  }
+
+  &__color-switch {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2rem;
+    height: 3.6rem;
+    border-radius: 2rem;
+    outline: none;
+    transition: 200ms;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+
+    @include themed() {
+      background-color: t('color-switch');
+      border: 3px solid t('color-switch');
+    }
+  
+    &:checked {
+      @include themed() {
+        background-color: t('color-switch');
+        border: 3px solid t('color-switch');
+      }
+    }
+  
+    &:before {
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      transition: 200ms ease-in;
+
+      @include themed() {
+        background-color: t('color-switch-btn');
+        box-shadow: 0 0.1rem 0.4rem t('shadow');
+      }
+
+      @include respond(-largest) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      @include respond(-medium) {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+  
+    &:checked:before {
+      top: 1.6rem;
+    }
   }
 
   &__header {
-    color: white;
-    font-size: 6rem;
-    margin: 3rem 0;
+    font-size: 5.5rem;
     align-self: center;
+    letter-spacing: 1.2rem;
+
+    @include themed() {
+      color: t('header');
+    }
   }
 }
