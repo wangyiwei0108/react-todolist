@@ -1,34 +1,50 @@
 .errand {
+
   &__container {
-    svg {
-      fill:black;
-      width: 2.5rem;
-      height: 2.5rem;
-  
-      &:hover {
-        cursor: pointer;
-      }
+    @include themed() {
+      color: t('text');
     }
   }
 
   &__editing {
-    position: relative;
-    background-color: white;
-    min-height: 16rem;
     display: grid;
     grid-template-rows: 1fr max-content;
+    position: relative;
+    min-height: 14rem;
+
+    @include themed() {
+      background-color: t('card');
+    }
   
     & input {
-
-      padding: 3rem;
       border: none;
       outline: none;
+      background-color: transparent;
 
       &::placeholder {
-        color: lightgray;
-        font-size: 2.2rem;
+        font-size: 1.9rem;
+        word-break: break-all;
+
+        @include themed() {
+          color: t('placeholder');
+        }
       }
     }
+
+    & svg {
+      width: 2rem;
+      height: 2rem;
+
+      @include themed() {
+        fill: t('btn');
+      }
+    }
+  }
+
+  &__editing-input {
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
 
   &__editing-btns {
@@ -37,31 +53,62 @@
   }
 
   &__notediting {
-    position: relative;
-    min-height: 16rem;
-    background-color: white;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    position: relative;
+    min-height: 14rem;
+
+    @include themed() {
+      background-color: t('card');
+    }
+
+    @include respond(-small) {
+      min-height: 12rem;
+    }
+
+    @include respond(-smallest) {
+      min-height: 10rem;
+    }
+
+    & svg {
+      width: 2rem;
+      height: 2rem;
+
+      @include themed() {
+        fill: t('btn');
+      }
+    }
   }
 
   &__stars {
     display: flex;
     justify-content: flex-end;
+    margin-right: 0.8rem;
 
     & svg {
       width: 1.6rem;
       height: 1.6rem;
+
+      @include themed() {
+        fill: t('tertiary');
+      }
     }
   }
 
   &__notediting-content {
-    cursor: pointer;
-    padding: 3rem;
+    padding: 1.5rem 2.8rem;
+    word-break: break-all;
+
+    @include respond(-large) {
+      padding: 1.2rem 2.6rem;
+    }
   }
 
   &__notediting-btns {
     display: flex;
     justify-content: flex-end;
+    margin-right: 0.5rem;
+    cursor: pointer;
   }
 
   &__num {
@@ -72,19 +119,36 @@
     left: 0;
     width: 5rem;
     height: 5rem;
-    background-color:coral;
     clip-path: polygon(100% 0%, 0 0, 0 100%);
+
+    @include themed() {
+      background-color: t('primary');
+    }
+
+    @include respond(-large) {
+      width: 4.7rem;
+      height: 4.7rem;
+    }
+
+    @include respond(-medium) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
   }
 
   &__completed {
     &--text {
-      color: lightgray;
       text-decoration: line-through;
+
+      @include themed() {
+        color: t('completed');
+      }
     }
 
     &--num {
-      background-color:steelblue;
+      @include themed() {
+        background-color: t('secondary');
+      }
     }
   }
 }
-

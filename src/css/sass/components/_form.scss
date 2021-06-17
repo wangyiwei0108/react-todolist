@@ -2,36 +2,109 @@
   &__container {
     display: flex;
     flex-direction: row;
-    height: 16rem;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     user-select: none;
+
+    @include respond(-large) {
+      margin-top: 6.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    @include respond(-medium) {
+      margin-top: 6rem;
+      margin-bottom: 4rem;
+
+    }
+
+    @include respond(-small) {
+      flex-direction: column;
+    }
   }
 
   &__addbar {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 41%;
+    height: 4.5rem;
 
-    & input {
-      margin: 0 1rem;
-      width: 20%;
+    @include respond(-large) {
+      width: 46%;
+      height: 4.2rem;
+    }
+
+    @include respond(-small) {
+      width: 100%;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__input-rating {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.1rem;
+
+    @include themed() {
+      background-color: t('input');
+    }
+
+    @include respond(-large) {
+      padding-right: 1rem;
+    }
+  }
+
+  &__input {
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    justify-self: flex-start;
+  
+    &::placeholder {
+      @include themed() {
+        color: t('placeholder');
+      }
+    }
+  }
+
+  &__rating {
+    margin-top: 1rem;
+
+    @include respond(-large) {
+      margin-top: 0.8rem;
     }
 
     & svg {
-      fill: yellow;
-      margin: 0.4rem 0rem 0.4rem 0.4rem;
-      width: 3rem;
-      height: 3rem;
+      width: 2.2rem;
+      height: 2.2rem;
+
+      @include themed() {
+        fill: t('tertiary');
+      }
+
+      @include respond(-large) {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 
   &__submit-btn {
-    margin: 0 1rem;
-    padding: 0.2rem 0.8rem;
-    color: white;
-    background-color: steelblue;
+    padding: 0.2rem 1.5rem;
+    font-size: 2.5rem;
     cursor: pointer;
+    opacity: 1;
+    
+    @include themed() {
+      background-color: t('btn');
+      color: t('btn-text');
+    }
   }
 
   &__filter {
@@ -39,42 +112,81 @@
     flex-direction: row;
 
     & div {
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 1rem;
+      padding-bottom: 0.5rem;
       cursor: pointer;
+      border-radius: 2em;
+
+      @include respond(-large) {
+        padding: 0.1rem 0.9rem;
+        padding-bottom: 0.4rem;
+      }
     }
   
     & div:not(:last-child) {
-      margin-right: 2rem;
+      margin-right: 1.5rem;
+
+      @include respond(-large) {
+        margin-right: 1.4rem;
+      }
+
+      @include respond(-medium) {
+        margin-right: 1.1rem;
+      }
     }
   }
 
   &__filter-all {
-    background-color: lightgray;
     opacity: 0.4;
 
+    @include themed() {
+      background-color: t('btn');
+      color: t('btn-text');
+    }
+
     &--pressed {
-      background-color: lightgray;
       opacity: 1;
+
+      @include themed() {
+        background-color: t('btn');
+        color: t('btn-text');
+      }
     }
   }
 
   &__filter-com {
-    background-color: steelblue;
     opacity: 0.4;
 
+    @include themed() {
+      background-color: t('secondary');
+      color: t('btn-text');
+    }
+
     &--pressed {
-      background-color: steelblue;
       opacity: 1;
+
+      @include themed() {
+        background-color: t('secondary');
+        color: t('btn-text');
+      }
     }
   }
 
   &__filter-uncom {
-    background-color: coral;
     opacity: 0.4;
 
+    @include themed() {
+      background-color: t('primary');
+      color: t('btn-text');
+    }
+
     &--pressed {
-      background-color: coral;
       opacity: 1;
+
+      @include themed() {
+        background-color: t('primary');
+        color: t('btn-text');
+      }
     }
   }
 }
