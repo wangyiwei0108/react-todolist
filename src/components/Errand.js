@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Rating from 'react-rating';
 
 const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
@@ -75,47 +75,58 @@ const Errand = ({todo, todos, setTodos, num, stars, setCompletedNum}) => {
     )
   }
 
+  // 當是正在編輯中的狀態時，促發按下 input tag 讓 input 是閃爍顯示
+  const inputRef = useRef();
+
+  useEffect(() => {
+    const clickHandler = () => {
+      inputRef.current.focus()
+    }
+    if(editing){
+      clickHandler()
+    }
+  }, [editing])
+
   return(
     <div className="errand__container">
       {editing
       ? // 在編輯中
+        
         <form className="errand__editing" onSubmit={confirmHandler}>
           <p className={todo.completed? "errand__completed--num errand__num" : "errand__num"}>{num + 1}</p>
           <div className="errand__editing-input">
-            <input onDoubleClick={confirmHandler} type="text" value={newText} placeholder={todo.text} onChange={newInputHandler}></input>
+            <input ref={inputRef} type="text" value={newText} placeholder="輸入修改事項" onChange={newInputHandler}></input>
           </div>
           <div className="errand__editing-btns">
-            <div onClick={confirmHandler} type="submit">
-              <svg><use xlinkHref="images/sprite.svg#icon-check"></use></svg>
-            </div>
-            <div onClick={cancleHandler}>
-              <svg><use xlinkHref="images/sprite.svg#icon-cross"></use></svg>
-            </div>
+            <i onClick={cancleHandler} className="fas fa-undo"></i>
+            <i onClick={confirmHandler} type="submit" className="far fa-check-square"></i>
           </div>
         </form>
+
       :  // 沒有在編輯
-      <div className="errand__notediting">
-        <div className="errand__stars">
-        <Rating
-            emptySymbol={<svg><use xlinkHref="images/sprite.svg#icon-star-outlined"></use></svg>}
-            fullSymbol={<svg><use xlinkHref="images/sprite.svg#icon-star"></use></svg>}
-            quiet={true}
-            stop={3}
-            initialRating={stars}
-            onClick={starHandler}/>
-        </div>
-        <div className="errand__notediting-content" onClick={doneHandler}>
+      
+        <div className="errand__notediting">
           <p className={todo.completed? "errand__completed--num errand__num" : "errand__num"}>{num + 1}</p>
-          <p className={todo.completed? "errand__completed--text" : ""}>{todo.text}</p>
-        </div>
-        <div className="errand__notediting-btns">
-          <div onClick={editHandler}>
-            <svg><use xlinkHref="images/sprite.svg#icon-pencil"></use></svg>
+          <div className="errand__stars">
+          <Rating
+              emptySymbol={<i className="far fa-star"></i>}
+              fullSymbol={<i className="fas fa-star"></i>}
+              quiet={true}
+              stop={3}
+              initialRating={stars}
+              onClick={starHandler}/>
           </div>
-          <div onClick={removeHandler}>
-            <svg><use xlinkHref="images/sprite.svg#icon-cup"></use></svg>
+          <div className="errand__notediting-content" onClick={doneHandler}>
+            <p className={todo.completed? "errand__completed--text" : ""}>{todo.text}</p>
           </div>
-        </div>
+          <div className="errand__notediting-btns">
+            <div onClick={editHandler}>
+              <i className="far fa-edit"></i>
+            </div>
+            <div onClick={removeHandler}>
+              <i className="far fa-trash-alt"></i>
+            </div>
+          </div>
       </div>
       }
     </div>
