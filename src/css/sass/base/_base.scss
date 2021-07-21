@@ -21,8 +21,7 @@ html {
 
   @include respond(-largest) {
     font-size: 75%;
-}
-
+  }
 }
 
 body {

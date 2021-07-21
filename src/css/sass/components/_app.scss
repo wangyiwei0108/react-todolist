@@ -1,6 +1,8 @@
 .app {
-
   &__background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     overflow-y: auto;
     min-height: 100vh;
@@ -13,36 +15,35 @@
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     position: relative;
-    min-height: 100vh;
-    padding: 5.5rem 10rem;
-    margin: 3.8rem 15rem;
+    padding: 4rem 9rem 4rem 6rem;
+    margin: 3rem 0;
+    width: 60%;
+    min-height: calc(100vh - 6rem);
     border-radius: 10px;
 
     @include themed() {
       background-color: t('bg-front');
-      box-shadow: 0 2rem 6rem t('shadow');
+      box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.729);
     }
 
     @include respond(-large) {
-      padding: 5rem 10rem;
-      margin: 3.7rem 12.5rem;
+      padding: 5rem 9rem 5rem 6rem;
     }
 
     @include respond(-medium) {
-      padding: 4rem 8rem;
-      margin: 3.2rem 11rem;
+      padding: 5rem 7.2rem 5rem 5rem;
+      width: 62%;
     }
 
     @include respond(-small) {
-      padding: 4rem 7rem;
-      margin: 2.8rem 6rem;
+      padding: 5rem 7.2rem 5rem 4.6rem;
+      width: 80%;
     }
 
     @include respond(-smallest) {
-      padding: 2rem 3.5rem;
-      margin: 2.5rem 2rem;
+      padding: 5rem 7.2rem 5rem 4.6rem;
+      width: 85%;
     }
   }
 
@@ -55,19 +56,23 @@
     border-radius: 2rem;
     outline: none;
     transition: 200ms;
-    top: 1rem;
-    right: 1rem;
+    top: 1.6rem;
+    right: 1.6rem;
     cursor: pointer;
 
     @include themed() {
-      background-color: t('color-switch');
-      border: 3px solid t('color-switch');
+      background-color: t('switch');
+      border: 3px solid t('switch');
+    }
+
+    @include respond(-large) {
+      width: 2rem;
     }
   
     &:checked {
       @include themed() {
-        background-color: t('color-switch');
-        border: 3px solid t('color-switch');
+        background-color: t('switch');
+        border: 3px solid t('switch');
       }
     }
   
@@ -82,13 +87,15 @@
       transition: 200ms ease-in;
 
       @include themed() {
-        background-color: t('color-switch-btn');
-        box-shadow: 0 0.1rem 0.4rem t('shadow');
+        background-color: t('switch-btn');
       }
 
       @include respond(-largest) {
         width: 1.5rem;
         height: 1.5rem;
+      }
+
+      @include respond(-large) {
       }
 
       @include respond(-medium) {
@@ -103,12 +110,13 @@
   }
 
   &__header {
-    font-size: 5.5rem;
-    align-self: center;
-    letter-spacing: 1.2rem;
+    font-size: 4.2rem;
+    align-self: flex-start;
+    letter-spacing: 0.7rem;
+    font-weight: 300;
 
     @include themed() {
-      color: t('header');
+      color: t('app-header');
     }
   }
 }

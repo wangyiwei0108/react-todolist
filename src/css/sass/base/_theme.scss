@@ -1,42 +1,53 @@
 $themes: (
   default: (
-    primary: $color-primary,
-    secondary: $color-secondary,
-    tertiary: $color-tertiary,
-    bg-gradient-1: $color-gradient-1,
-    bg-gradient-2: $color-gradient-2,
-    bg-front: rgba($color-white, 0.7),
-    header: $color-grey-3,
-    color-switch: $color-grey-1,
-    color-switch-btn: $color-switch-btn,
-    text: $color-grey-3,
-    card: rgba($color-white, 0.8),
-    shadow: rgba($color-black, 0.1),
-    completed: $color-grey-1,
-    placeholder: $color-grey-2,
-    btn: $color-grey-2,
-    btn-text: $color-white,
-    input: rgba($color-white, 0.8)
-
+    primary: $primary,
+    secondary: $secondary,
+    tertiary: $tertiary,
+    /////////////////////////////////////
+    app-header: $grey-2,
+    /////////////////////////////////////
+    bg-gradient-1: $bg-1,
+    bg-gradient-2: $bg-2,
+    bg-front: $grey-5,
+    /////////////////////////////////////
+    switch: $grey-4,
+    switch-btn: $grey-6,
+    /////////////////////////////////////
+    errand-card: $grey-6,
+    errand-num: $grey-6,
+    errand-text: $grey-2,
+    errand-text-completed: $grey-4,
+    errand-btn: $grey-4,
+    /////////////////////////////////////
+    form-input: $grey-6,
+    form-placeholder: $grey-4,
+    form-btn: $grey-3,
+    form-btn-text: $grey-6
   ),
   dark: (
-    primary: $color-primary-dark,
-    secondary: $color-secondary-dark,
-    tertiary: $color-tertiary-dark,
-    bg-gradient-1: $color-gradient-1-dark,
-    bg-gradient-2: $color-gradient-2-dark,
-    bg-front: rgba($color-white, 0.9),
-    header: $color-grey-3-dark,
-    color-switch: $color-grey-1-dark,
-    color-switch-btn: $color-switch-btn,
-    text: $color-grey-3-dark,
-    card: rgba($color-white, 0.9),
-    shadow: rgba($color-black, 0.1),
-    completed: $color-grey-1-dark,
-    placeholder: $color-grey-2-dark,
-    btn: $color-grey-2-dark,
-    btn-text: $color-white,
-    input: rgba($color-white, 0.8)
+    primary: $primary-dark,
+    secondary: $secondary-dark,
+    tertiary: $tertiary-dark,
+    /////////////////////////////////////
+    app-header: $grey-3-dark,
+    /////////////////////////////////////
+    bg-gradient-1: $bg-1-dark,
+    bg-gradient-2: $bg-2-dark,
+    bg-front: $grey-1-dark,
+    /////////////////////////////////////
+    switch: $grey-2-dark,
+    switch-btn: $grey-4-dark,
+    /////////////////////////////////////
+    errand-card: $grey-3-dark,
+    errand-num: $grey-4-dark,
+    errand-text: $bg-1-dark,
+    errand-text-completed: $grey-2-dark,
+    errand-btn: $grey-2-dark,
+    /////////////////////////////////////
+    form-input: $grey-3-dark,
+    form-placeholder: $grey-2-dark,
+    form-btn: $grey-2-dark,
+    form-btn-text: $grey-4-dark
   )
 );
 

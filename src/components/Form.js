@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Rating from 'react-rating';
 
 const Form = ({setTodos, todos, setStatus, setStars, stars, completedNum}) => {
@@ -44,27 +44,37 @@ const Form = ({setTodos, todos, setStatus, setStars, stars, completedNum}) => {
     setStars(value);
   }
 
+  const inputRef = useRef();
+
+  useEffect(() => {
+    const clickHandler = () => {
+      inputRef.current.focus()
+    }
+      clickHandler()
+  }, [])
+
   return(
     <div className="form__container">
       <form className="form__addbar" onSubmit={formHandler}>
+        <div className="form__submit-btn" onClick={formHandler} type="submit">
+          <p>&#43;</p>
+        </div>
         <div className="form__input-rating">
-          <input className="form__input" 
+          <input ref={inputRef} className="form__input" 
               value={input}
               onChange={inputHandler}
               placeholder="輸入事項"
-              type="text"></input>
+              type="text">
+          </input>
           <div className="form__rating">
             <Rating
-              emptySymbol={<svg><use xlinkHref="images/sprite.svg#icon-star-outlined"></use></svg>}
-              fullSymbol={<svg><use xlinkHref="images/sprite.svg#icon-star"></use></svg>}
+              emptySymbol={<i className="form__empty-star far fa-star"></i>}
+              fullSymbol={<i className="form__full-star fas fa-star"></i>}
               quiet={true}
               initialRating={1}
               stop={3}
               onClick={starHandler} />
           </div>
-        </div>
-        <div className="form__submit-btn" onClick={formHandler} type="submit">
-          <p>&#43;</p>
         </div>
       </form>
       <div className="form__filter">

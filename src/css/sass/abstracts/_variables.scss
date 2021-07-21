@@ -1,32 +1,27 @@
-$color-white: white;
-$color-black: black;
+$primary: #e8acac;
+$secondary: rgb(182, 171, 200);
+$tertiary: rgb(239, 210, 154);
 
-/// light
+$bg-1: #515151;
+$bg-2: #575757;
 
-$color-primary: rgb(164, 206, 164);
-$color-secondary: rgb(142, 207, 235);
-$color-tertiary: rgb(203, 203, 128) ;
+$grey-1: #303030;
+$grey-2: rgb(106, 106, 106);
+$grey-3: rgb(189, 189, 189);
+$grey-4: rgb(208, 208, 208);
+$grey-5: #EBEBEB;
+$grey-6: rgb(251, 251, 251);
 
-$color-switch-btn:rgb(251, 251, 251);
+/////////////////////
 
-$color-grey-1: lightgray;
-$color-grey-2: rgb(203, 203, 203);
-$color-grey-3: rgb(113, 113, 113);
+$primary-dark: rgb(226, 111, 69);
+$secondary-dark: rgb(70, 169, 211);
+$tertiary-dark: #e7ae3c;
 
-$color-gradient-1: rgb(230, 230, 175);
-$color-gradient-2: rgb(230, 230, 138);
+$bg-1-dark: #1f1f1f;
+$bg-2-dark: #343434;
 
-/// dark
-
-$color-primary-dark: #e8acac;
-$color-secondary-dark: rgb(182, 171, 200);
-$color-tertiary-dark: rgb(239, 210, 154);
-
-$color-switch-btn-dark:rgb(249, 249, 249);
-
-$color-grey-1-dark: rgb(202, 205, 208);
-$color-grey-2-dark: rgb(186, 186, 186);
-$color-grey-3-dark: rgb(106, 106, 106);
-
-$color-gradient-1-dark: rgba(55,59,79,1);
-$color-gradient-2-dark: rgba(9,16,42,1);
+$grey-1-dark: #373737;
+$grey-2-dark: #939393;
+$grey-3-dark: rgb(222, 222, 222);
+$grey-4-dark: rgb(244, 244, 244);

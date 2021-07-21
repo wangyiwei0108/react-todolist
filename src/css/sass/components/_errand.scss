@@ -1,106 +1,181 @@
 .errand {
-
   &__container {
     @include themed() {
-      color: t('text');
+      color: t('errand-text');
+    }
+  }
+
+  &__num {
+    position: absolute;
+    padding-top: 0.2rem;
+    padding-left: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0 0 100px 0;
+
+    @include themed() {
+      color: t('errand-num');
+      background-color: t('primary');
+    }
+
+    @include respond(-large) {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    @include respond(-medium) {
+      width: 3.5rem;
+      height: 3.5rem;
     }
   }
 
   &__editing {
     display: grid;
     grid-template-rows: 1fr max-content;
+    min-height: 15rem;
     position: relative;
-    min-height: 14rem;
 
     @include themed() {
-      background-color: t('card');
+      background-color: t('errand-card');
     }
-  
+
+    @include respond(-small) {
+      min-height: 14rem;
+    }
+
+    @include respond(-smallest) {
+      min-height: 13rem;
+    }
+  }
+
+  &__editing-input {
+    display: flex;
+    align-content: center;
+
     & input {
       border: none;
       outline: none;
       background-color: transparent;
+      font-size: 1.9rem;
+      margin-left: 2.8rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 1.4px;
+      font-family: 'Noto Sans TC', sans-serif;
+      width: 100%;
+
+      @include themed() {
+        color: t('placeholder');
+      }
+
+      @include respond(-medium) {
+        margin-bottom: 0rem;
+        margin-top: 0.8rem;
+        margin-left: 3rem;
+      }
+
+      @include respond(-small) {
+        margin-bottom: 0rem;
+        margin-top: 1.5rem;
+        margin-left: 3rem;
+      }
+
+      @include respond(-smallest) {
+        margin-bottom: 0rem;
+        margin-top: 2.5rem;
+        margin-left: 3rem;
+      }
 
       &::placeholder {
-        font-size: 1.9rem;
-        word-break: break-all;
+        letter-spacing: 1.4px;
+        opacity: 0.2;
 
         @include themed() {
           color: t('placeholder');
         }
       }
     }
-
-    & svg {
-      width: 2rem;
-      height: 2rem;
-
-      @include themed() {
-        fill: t('btn');
-      }
-    }
-  }
-
-  &__editing-input {
-    display: flex;
-    justify-content: center;
-    align-content: center;
   }
 
   &__editing-btns {
     display: flex;
     justify-content: flex-end;
+
+    & .fa-check-square, .fa-undo {
+      @include themed() {
+        color: t('errand-btn');
+      }
+    }
+
+    & .fa-check-square {
+      font-size: 2.2rem;
+      padding-right: 0.6rem;
+      padding-bottom: 0.4rem;
+    }
+
+    & .fa-undo {
+      font-size: 1.8rem;
+      padding-top: 0.2rem;
+      padding-right: 0.4rem;
+    }
   }
 
   &__notediting {
     display: grid;
     grid-template-rows: auto 1fr auto;
     position: relative;
-    min-height: 14rem;
+    min-height: 15rem;
 
     @include themed() {
-      background-color: t('card');
+      background-color: t('errand-card');
     }
 
     @include respond(-small) {
-      min-height: 12rem;
+      min-height: 14rem;
     }
 
     @include respond(-smallest) {
-      min-height: 10rem;
+      min-height: 13rem;
     }
 
-    & svg {
-      width: 2rem;
-      height: 2rem;
-
-      @include themed() {
-        fill: t('btn');
-      }
+    & .fa-star {
+      font-size: 1.5rem;
+      margin-left: 0.3rem;
     }
   }
 
   &__stars {
     display: flex;
     justify-content: flex-end;
-    margin-right: 0.8rem;
+    margin-right: 0.5rem;
 
-    & svg {
-      width: 1.6rem;
-      height: 1.6rem;
-
+    & .far.fa-star {
       @include themed() {
-        fill: t('tertiary');
+        color: t('tertiary');
+      }
+    }
+
+    & .fas.fa-star {
+      @include themed() {
+        color: t('tertiary');
       }
     }
   }
 
   &__notediting-content {
     padding: 1.5rem 2.8rem;
-    word-break: break-all;
+    letter-spacing: 1.4px;
+    cursor: pointer;
 
     @include respond(-large) {
       padding: 1.2rem 2.6rem;
+    }
+
+    @include respond(-medium) {
+      padding: 2rem 3rem;
     }
   }
 
@@ -108,31 +183,19 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 0.5rem;
-    cursor: pointer;
-  }
+    padding-bottom: 0.4rem;
 
-  &__num {
-    position: absolute;
-    padding-left: 0.7rem;
-    font-size: 1.8rem;
-    top: 0;
-    left: 0;
-    width: 5rem;
-    height: 5rem;
-    clip-path: polygon(100% 0%, 0 0, 0 100%);
+    & .fa-edit, .fa-trash-alt {
+      cursor: pointer;
+      font-size: 2.1rem;
 
-    @include themed() {
-      background-color: t('primary');
+      @include themed() {
+        color: t('errand-btn');
+      }
     }
 
-    @include respond(-large) {
-      width: 4.7rem;
-      height: 4.7rem;
-    }
-
-    @include respond(-medium) {
-      width: 4.5rem;
-      height: 4.5rem;
+    & .fa-edit {
+      padding-right: 0.3rem;
     }
   }
 
@@ -141,7 +204,7 @@
       text-decoration: line-through;
 
       @include themed() {
-        color: t('completed');
+        color: t('errand-text-completed');
       }
     }
 
