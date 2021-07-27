@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 待辦事項工具
 可以紀錄待辦事項的小工具。除了基本的新增、刪除功能之外，也能夠對事項進行修改、標註與篩選。另外，也支援暗黑模式，提供使用者另一種介面顏色的選擇。
 
@@ -27,3 +28,6 @@
 - 以 gh-pages 部署至 Github
 
 ![GITHUB](https://github.com/wangyiwei0108/react-aqi-search/blob/master/src/assets/aqi.png)
+=======
+React me
+>>>>>>> a8b9ac6e28327af0046550efa8cfea49885634a6
