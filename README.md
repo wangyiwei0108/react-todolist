@@ -27,6 +27,3 @@
 - 以 gh-pages 部署至 Github
 
 ![GITHUB](https://github.com/wangyiwei0108/react-aqi-search/blob/master/src/assets/aqi.png)
-=======
-React me
->>>>>>> a8b9ac6e28327af0046550efa8cfea49885634a6
