@@ -26,4 +26,4 @@
 - 以 localStorage 儲存資訊
 - 以 gh-pages 部署至 Github
 
-![GITHUB](https://github.com/wangyiwei0108/react-aqi-search/blob/master/src/assets/aqi.png)
+![GITHUB](https://github.com/wangyiwei0108/react-todolist/blob/master/src/assets/todo.png)
