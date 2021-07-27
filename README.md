@@ -20,10 +20,9 @@
 
 ## 學習記錄
 - 使用 useRef 獲取 DOM element 資訊，進而對其操控（使 input 為 focus 狀態，游標自動閃爍）
-- 資料處理（filter、map、forEach 之應用）
 - 使用 SASS 達成暗黑模式的開關設定
 - 設定元件狀態之預設值
 - 以 localStorage 儲存資訊
 - 以 gh-pages 部署至 Github
-
+---
 ![GITHUB](https://github.com/wangyiwei0108/react-todolist/blob/master/src/assets/todo.png)
