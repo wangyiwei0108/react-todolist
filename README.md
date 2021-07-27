@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# 待辦事項工具
+可以紀錄待辦事項的小工具。除了基本的新增、刪除功能之外，也能夠對事項進行修改、標註與篩選。另外，也支援暗黑模式，提供使用者另一種介面顏色的選擇。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DEMO
+[前往頁面](https://wangyiwei0108.github.io/react-todolist/)
 
-## Available Scripts
+## 使用技術
+- HTML / CSS / JS
+- SASS
+- localStorage
+- React
 
-In the project directory, you can run:
+## 實現功能
+- 具備對事項進行 CRUD（新增、讀取、修改、刪除）之功能
+- 能夠以星星數量註記事項的重要程度
+- 可於畫面分別顯示已完成、未完成，或全部的事項
+- 點擊事項，可轉換事項的完成狀態（已完成、未完成）
+- 按下右上角開關，可將 UI 顏色切換為暗黑模式
+- RWD：瀏覽器畫面支援手機、平板、電腦等裝置
 
-### `yarn start`
+## 學習記錄
+- 使用 useRef 獲取 DOM element 資訊，進而對其操控（使 input 為 focus 狀態，游標自動閃爍）
+- 資料處理（filter、map、forEach 之應用）
+- 使用 SASS 達成暗黑模式的開關設定
+- 設定元件狀態之預設值
+- 以 localStorage 儲存資訊
+- 以 gh-pages 部署至 Github
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![GITHUB](https://github.com/wangyiwei0108/react-aqi-search/blob/master/src/assets/aqi.png)
